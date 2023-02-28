@@ -19,7 +19,9 @@ app.use(express.static(path.join(__dirname, "./client/build")))
 app.get("*", function(req,res){
   res.sendFile(path.join(__dirname, "./client/build/index.html"))
 })
+
+db().then(()=>{
 app.listen(process.env.PORT, async() => {
-  await db();
   console.log(`Example app listening on port ${process.env.PORT}`)
+})
 })
