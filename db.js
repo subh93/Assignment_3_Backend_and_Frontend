@@ -3,9 +3,9 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-const connectiondone = () => {
-    mongoose.set('strictQuery', true);
-    mongoose.connect(process.env.MONGOPATH,{useNewUrlParser: true}).then(data => {
+const connectiondone = async () => {
+    await mongoose.set('strictQuery', true);
+    await mongoose.connect(process.env.MONGOPATH,{useNewUrlParser: true}).then(data => {
         console.log("Connection Establish")
         const fetch_data = mongoose.connection.db.collection("Techosto_data");
         fetch_data.find().toArray(function(err,data){
