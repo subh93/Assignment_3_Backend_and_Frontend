@@ -12,10 +12,6 @@ dotenv.config();
 app.use(cors());
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-
 app.use('/v1/api', AD);
 
 app.use(express.static(path.join(__dirname, "./client/build")))
