@@ -18,10 +18,10 @@ app.get('/', (req, res) => {
 
 app.use('/v1/api', AD);
 
-app.use(express.static(path.join(__dirname, "./frontend/build")))
+app.use(express.static(path.join(__dirname, "./client/build")))
 
 app.get("*", (req,res) =>{
-  res.sendFile(path.join(__dirname, "./frontend/build/index.html"))
+  res.sendFile(path.join(__dirname, "./client/build/index.html"))
 })
 app.listen(process.env.PORT, async() => {
   await db();
