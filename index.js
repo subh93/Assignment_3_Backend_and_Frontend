@@ -9,7 +9,7 @@ const AD = require('./routes/AllData');
 
 dotenv.config();
 
-app.use(cors({origin:'https://rich-fish-coat.cyclic.app', optionsSuccessStatus: 200}));
+app.use(cors());
 app.use(bodyParser.json());
 
 app.use('/v1/api', AD);
